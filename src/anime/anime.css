@@ -30,6 +30,7 @@ section .card {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  text-align: center;
 }
 
 section .card h3 {
