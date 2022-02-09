@@ -52,20 +52,27 @@ const cardCreater = (groupData,genreList) =>{
     makeDescription.appendChild(makeMovieTitle);
 
     const makeReleaseDate = document.createElement("h4");
-    makeReleaseDate.innerText = groupData.release_date;
+    makeReleaseDate.innerText = "Release date:" + " " + groupData.release_date;
     makeDescription.appendChild(makeReleaseDate);
 
-    /*let genresTitle = getMovie();
-    console.log(genresTitle);*/
+    const makeGenrelist = document.createElement("div");
+    makeGenrelist.classList.add("genrelist");
+    makeDescription.appendChild(makeGenrelist);
     for(let i = 0; i < genreList.length ; i++){
     const makeGenres = document.createElement("h4");
     makeGenres.innerHTML = genreList[i].name;
-    makeDescription.appendChild(makeGenres);
+    makeGenrelist.appendChild(makeGenres);
     }
 
     const makeSummary = document.createElement("p");
     makeSummary.innerText = groupData.overview;
     makeDescription.appendChild(makeSummary);
+
+    const makeATag = document.createElement("a");
+    makeATag.href= "https://www.themoviedb.org/movie/"+ groupData.id;
+    makeATag.target = "_blank"
+    makeATag.innerText = "Read More...";
+    makeDescription.appendChild(makeATag);
 
 
 

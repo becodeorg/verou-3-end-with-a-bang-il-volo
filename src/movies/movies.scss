@@ -13,27 +13,25 @@ body {
     background-color: $base-color;
     color: $head-color;
 }
-
-.wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 70%;
-    height: auto;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+section{
+    .wrapper {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 70%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
-
 .card {
-    min-width: 35%;
+    max-width: 35%;
     height: auto;
     background: $accent-color;
     border: 2px solid $accent-color;
-
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
@@ -127,4 +125,12 @@ body {
     transform: scale(0.95) translateX(-5px);
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
+}
+
+.genrelist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
