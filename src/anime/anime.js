@@ -11,15 +11,16 @@ const LoadPopular = () => {
 }
 
 const generateCards = (popularArray) => {
-    for (let i = 0; i < popularArray.length ; i++) {
+    for (let i = 0; i < 4 ; i++) {
         const newCard = document.createElement("div");
         newCard.className = "box";
         newCard.style.background = "url(" + popularArray[i].attributes.posterImage.medium + ")"
-        const dataEl = document.createElement("div");
-        dataEl.className = "data";
+        const dateEl = document.createElement("div");
+        dateEl.className = "date";
+        dateEl.innerHTML = "<h4>Released: "+ popularArray[i].attributes.startDate +"</h4>"
         const newTitle = document.createElement("h1");
         newTitle.innerText = popularArray[i].attributes.canonicalTitle;
-        newCard.append(dataEl, newTitle);
+        newCard.append(dateEl, newTitle);
         const parentDiv = document.querySelector(".wrap");
         console.log(newTitle, parentDiv);
         parentDiv.append(newCard);
@@ -28,5 +29,9 @@ const generateCards = (popularArray) => {
 }
 
 
-document.querySelector("button").addEventListener("click", LoadPopular)
+//event listeners
+
+window.onload = () => {
+    LoadPopular()
+}
 

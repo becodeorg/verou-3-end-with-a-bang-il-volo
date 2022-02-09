@@ -1,2 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+<<<<<<< HEAD
+=======
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#seriesSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.seriesCard {
+  width: 300px;
+  height: 280px;
+  margin: 20px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+>>>>>>> d00e09c259fea597f710f2a6f5fcf25ece255c3a
 /*# sourceMappingURL=series.css.map */
