@@ -2,21 +2,26 @@ const baseUrl = "https://kitsu.io/api/edge/anime?"
 const loadAnime = () => {
     const sortByPopularty = "sort=popularityRank"
     fetchList(sortByPopularty)
+    const sortByRating = "sort=-averageRating"
+    fetchList(sortByRating)
 }
 
 const fetchList = (whattofetch) => {
     fetch(baseUrl + whattofetch)
     .then( response => response.json())
     .then(data => {
-        const popularArray = data.data
-        console.log(popularArray)
-        const popParent = document.querySelector(".wrap");
-        generateCards(popularArray, popParent)
+        let popParent = document.querySelector(".wrap");
+        const dataArray = data.data
+        console.log(dataArray)
+        if ( whattofetch === "sort=-averageRating") {
+            popParent = document.querySelectorAll(".wrap")[1]
+        }
+        generateCards(dataArray, popParent)
         })
 }
 
 const generateCards = (popularArray, parent) => {
-    for (let i = 0; i < 4 ; i++) {
+    for (let i = 0; i < 5 ; i++) {
         const newCard = document.createElement("div");
         newCard.className = "box";
         newCard.style.background = "url(" + popularArray[i].attributes.posterImage.medium + ")"
@@ -31,7 +36,6 @@ const generateCards = (popularArray, parent) => {
         newCard.append(dateEl, newTitle, ratingBadge);
         console.log(newTitle, parent);
         parent.append(newCard);
-        
     }
 }
 
