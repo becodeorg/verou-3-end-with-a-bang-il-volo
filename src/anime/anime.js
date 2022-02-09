@@ -20,10 +20,14 @@ const generateCards = (popularArray) => {
         dateEl.innerHTML = "<h4>Released: "+ popularArray[i].attributes.startDate +"</h4>"
         const newTitle = document.createElement("h1");
         newTitle.innerText = popularArray[i].attributes.canonicalTitle;
-        newCard.append(dateEl, newTitle);
+        const ratingBadge = document.createElement("div");
+        ratingBadge.innerText = Math.round(popularArray[i].attributes.averageRating)
+        ratingBadge.className = "rating";
+        newCard.append(dateEl, newTitle, ratingBadge);
         const parentDiv = document.querySelector(".wrap");
         console.log(newTitle, parentDiv);
         parentDiv.append(newCard);
+        
 
     }
 }
