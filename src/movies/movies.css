@@ -10,44 +10,40 @@ body {
   color: #f4815a;
 }
 
-.wrapper {
+section .wrapper {
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 650px;
+          transform: translate(-50%, -50%);
+  max-width: 70%;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -ms-flex-preferred-size: 300px;
-  flex-basis: 300px;
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  height: 440px;
-  background: #fff;
-  border: 2px solid #fff;
+  max-width: 35%;
+  height: auto;
+  background: #21325e;
+  border: 2px solid #21325e;
   -webkit-box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   -webkit-transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
   transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
   overflow: hidden;
   position: relative;
+  display: inline-block;
 }
 
 .card img {
@@ -61,7 +57,7 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #21325e;
   width: 100%;
   height: 100%;
   -webkit-transition: all .7s ease-in-out;
@@ -100,7 +96,7 @@ body {
 }
 
 .card h1 {
-  color: #ff3838;
+  color: #f4815a;
   letter-spacing: 1px;
   margin: 0px;
 }
@@ -108,6 +104,8 @@ body {
 .card p {
   line-height: 24px;
   height: 70%;
+  color: #f0f0f0;
+  word-wrap: break-word;
 }
 
 .card button {
@@ -132,5 +130,20 @@ body {
   transform: scale(0.95) translateX(-5px);
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
+}
+
+.genrelist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=movies.css.map */

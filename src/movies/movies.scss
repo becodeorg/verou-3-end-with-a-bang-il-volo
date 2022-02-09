@@ -2,117 +2,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 
 
-*{
-    
+* {
+
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
-body{
+
+body {
     background-color: $base-color;
     color: $head-color;
 }
-.wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 650px;
-    height: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
+section{
+    .wrapper {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 70%;
+        height: auto;
+        display: flex;
         flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  
-  .card {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    -ms-flex-preferred-size: 300px;
-        flex-basis: 300px;
-    -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-            flex-grow: 0;
-    height: 440px;
-    background: #fff;
-    border: 2px solid #fff;
-    -webkit-box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.card {
+    max-width: 35%;
+    height: auto;
+    background: $accent-color;
+    border: 2px solid $accent-color;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    -webkit-transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     overflow: hidden;
     position: relative;
-  }
-  
-  .card img {
+    display: inline-block;
+}
+
+.card img {
     width: 100%;
     height: 100%;
     -webkit-transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
-  }
-  
-  .descriptions {
+}
+
+.descriptions {
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: $accent-color;
     width: 100%;
     height: 100%;
     -webkit-transition: all .7s ease-in-out;
     transition: all .7s ease-in-out;
     padding: 20px;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     -webkit-clip-path: circle(0% at 100% 100%);
-            clip-path: circle(0% at 100% 100%);
-  }
+    clip-path: circle(0% at 100% 100%);
   
-  .card:hover .descriptions {
+}
+
+.card:hover .descriptions {
     left: 0px;
     -webkit-transition: all .7s ease-in-out;
     transition: all .7s ease-in-out;
     -webkit-clip-path: circle(75%);
-            clip-path: circle(75%);
-  }
-  
-  .card:hover {
+    clip-path: circle(75%);
+}
+
+.card:hover {
     -webkit-transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
     -webkit-transform: scale(0.97);
-            transform: scale(0.97);
-  }
-  
-  .card:hover img {
+    transform: scale(0.97);
+}
+
+.card:hover img {
     -webkit-transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
     -webkit-transform: scale(1.6) rotate(20deg);
-            transform: scale(1.6) rotate(20deg);
+    transform: scale(1.6) rotate(20deg);
     -webkit-filter: blur(3px);
-            filter: blur(3px);
-  }
-  
-  .card h1 {
-    color: #ff3838;
+    filter: blur(3px);
+}
+
+.card h1 {
+    color: $head-color;
     letter-spacing: 1px;
     margin: 0px;
-  }
-  
-  .card p {
+}
+
+.card p {
     line-height: 24px;
     height: 70%;
-  }
-  
-  .card button {
+    color: $font-color;
+    word-wrap: break-word;
+}
+
+.card button {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -124,14 +115,22 @@ body{
     font-size: 15px;
     outline: none;
     -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
-            box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
-  }
-  
-  .card button:hover {
+}
+
+.card button:hover {
     -webkit-transform: scale(0.95) translateX(-5px);
-            transform: scale(0.95) translateX(-5px);
+    transform: scale(0.95) translateX(-5px);
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
-  }
+}
+
+.genrelist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
