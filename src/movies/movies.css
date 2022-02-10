@@ -53,6 +53,10 @@ section {
   height: 300px;
 }
 
+.container-movies h1 {
+  color: #f4815a;
+}
+
 .container-movies::-webkit-scrollbar {
   overflow: hidden;
 }

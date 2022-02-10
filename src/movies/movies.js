@@ -116,6 +116,14 @@ const cardCreater = (groupData,genreList,duration) =>{
     makeATag.target = "_blank"
     makeATag.innerText = "Read More...";
     makeDescription.appendChild(makeATag);
+    
+    tippy(makeCard, {
+        placement: "right",
+        interactive: true,
+        arrow: true,
+        theme: "light-border",
+        content: makeDescription,
+    })
 
 
 

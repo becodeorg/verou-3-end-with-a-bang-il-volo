@@ -157,13 +157,14 @@ body {
 section {
     background-color: $accent-color;
     padding: 1rem;
-    h2 {
+    .genreWrap, .highestRatedWrap, .popularwrap {
         padding-left: 40px;
         width: 90%;
         display: block;
         margin: auto;
         max-width: 1400px;
     }
+    
     
 
     .wrap {
