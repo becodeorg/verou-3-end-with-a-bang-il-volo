@@ -4,6 +4,8 @@ const loadAnime = () => {
     fetchList(sortByPopularty)
     const sortByRating = "sort=-averageRating&page[limit]=20"
     fetchList(sortByRating)
+    const sortByGenre = "filter[categories]=adventure&page[limit]=20&page[offset]=2&sort=popularityRank"
+    fetchList(sortByGenre)
 }
 
 const fetchList = (whattofetch) => {
@@ -15,14 +17,20 @@ const fetchList = (whattofetch) => {
         console.log(dataArray)
         if ( whattofetch === "sort=-averageRating&page[limit]=20") {
             popParent = document.querySelectorAll(".wrap")[1]
+        } else if (whattofetch.includes("filter[categories]=")) {
+            popParent = document.querySelectorAll(".wrap")[2]
         }
         generateCards(dataArray, popParent)
         })
 }
 
 const generateCards = (popularArray, parent) => {
-    for (let i = 0; parent.children.length != 5 ; i++) {
-        if ( CheckDoubleAnimes(popularArray, i) === 1 ) {
+    let x = 5;
+    if (parent === document.querySelectorAll(".wrap")[2]) {
+        x = 20;
+    }
+    for (let i = 0; parent.children.length != x ; i++) {
+        if ( CheckforDemonSlayer(popularArray, i) === 1 ) {
             continue;
         }
         const newCard = document.createElement("div");
@@ -41,23 +49,21 @@ const generateCards = (popularArray, parent) => {
         parent.append(newCard);
         let description = popularArray[i].attributes.description;
         tippy(newCard, {
-            placement: "bottom",
+            placement: "right",
+            interactive: true,
             arrow: true,
+            theme: "light-border",
             content: description,
-            
         })
     }
 }
-
-const CheckDoubleAnimes = (popularArray, i) => {
+const CheckforDemonSlayer = (popularArray, i) => {
     if (popularArray[i].attributes.canonicalTitle.includes("Kimetsu")) {
         return 1;
     } else {
         return 0;
     }
-
 }
-
 //event listeners
 window.onload = () => {
     loadAnime()
