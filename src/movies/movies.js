@@ -3,11 +3,40 @@ const apiUrl = "https://api.themoviedb.org/3/movie/76341?api_key=";
 const apiPop = "https://api.themoviedb.org/3/movie/popular?api_key=";
 
 
+const slider = document.querySelector('.container-movies');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', e => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const SCROLL_SPEED = 3;
+  const walk = (x - startX) * SCROLL_SPEED;
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+
 const getPop = () =>{
     fetch(apiPop + data.key)
     .then(response => response.json())
     .then(data => {
-        for(let i = 0; i < 5; i++){
+        for(let i = 0; i < 10 ; i++){
             let groupData = data.results[i];
             //console.log(groupData);
             getMovie(groupData);       
@@ -45,9 +74,9 @@ const timeConvert = (duration) => {
 
 const cardCreater = (groupData,genreList,duration) =>{
     
-    const getWrapper = document.querySelector(".wrapper");
+    const getWrapper = document.querySelector(".container-movies");
     const makeCard = document.createElement("div");
-    makeCard.classList.add("card");
+    makeCard.classList.add("box");
     getWrapper.appendChild(makeCard);
 
     const makeImg = document.createElement("img");
