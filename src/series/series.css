@@ -12,6 +12,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 100%;
 }
 
 #cardSection #firstSection {
@@ -47,5 +48,6 @@
 img {
   max-width: 100%;
   max-height: 100%;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=series.css.map */

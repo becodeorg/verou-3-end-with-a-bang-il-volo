@@ -25,9 +25,9 @@ const creatingCards = (info, result) => {
         const firstTitle = document.createElement("h3");
         firstTitle.innerHTML = info.results[i].name;
         firstSeriesInfo.appendChild(firstTitle);
-        const firstOverview = document.createElement("p");
-        firstOverview.innerHTML = info.results[i].overview;
-        firstSeriesInfo.appendChild(firstOverview);
+        const firstCountry = document.createElement("p");
+        firstCountry.innerHTML = "Country: " + info.results[i].origin_country[0];
+        firstSeriesInfo.appendChild(firstCountry);
 
         const firstSeriesDetail = document.createElement("div");
         firstSeriesDetail.classList.add("seriesDetail");
@@ -36,6 +36,9 @@ const creatingCards = (info, result) => {
         const firstSeriesYear = document.createElement("p");
         firstSeriesYear.innerHTML = "Release Year: " + info.results[i].first_air_date;
         firstSeriesDetail.appendChild(firstSeriesYear);
+
+        // const moreInfo = document.createElement("a");
+        // moreInfo.src
 
         //Top 5 top rated
         const secondSection = document.getElementById("secondSection");
@@ -56,9 +59,9 @@ const creatingCards = (info, result) => {
         const secondTitle = document.createElement("h3");
         secondTitle.innerHTML = result.results[i].name;
         secondSeriesInfo.appendChild(secondTitle);
-        const secondOverview = document.createElement("p");
-        secondOverview.innerHTML = result.results[i].overview;
-        secondSeriesInfo.appendChild(secondOverview);
+        const secondCountry = document.createElement("p");
+        secondCountry.innerHTML = "Country: " + result.results[i].origin_country[0];
+        secondSeriesInfo.appendChild(secondCountry);
 
         const secondSeriesDetail = document.createElement("div");
         secondSeriesDetail.classList.add("seriesDetail");
