@@ -42,7 +42,11 @@ section{
             width: 200px;
             height: 300px;
         }
-    }
+       
+}
+h1{
+    color: $head-color;
+}
 }
 .container-movies::-webkit-scrollbar{
     overflow: hidden;
