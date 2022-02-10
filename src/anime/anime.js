@@ -44,6 +44,9 @@ const generateCards = (popularArray, parent) => {
         const ratingBadge = document.createElement("div");
         ratingBadge.innerText = Math.round(popularArray[i].attributes.averageRating)
         ratingBadge.className = "rating";
+        if ( ratingBadge.innerHTML < 80) {
+            ratingBadge.style.backgroundColor = "orange";
+        }
         newCard.append(dateEl, newTitle, ratingBadge);
         console.log(newTitle, parent);
         parent.append(newCard);
