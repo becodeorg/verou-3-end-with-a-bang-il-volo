@@ -13,187 +13,6 @@ body {
   width: 100%;
 }
 
-.container {
-  max-width: 1400px;
-  width: 90%;
-  margin: auto;
-}
-
-.navbar {
-  width: 100%;
-  -webkit-box-shadow: 0 1px 4px rgba(92, 99, 105, 0.15);
-          box-shadow: 0 1px 4px rgba(92, 99, 105, 0.15);
-}
-
-.nav-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 62px;
-}
-
-.navbar .menu-items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.navbar .nav-container li {
-  list-style: none;
-}
-
-.navbar .nav-container a {
-  text-decoration: none;
-  color: #f4815a;
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 0.7rem;
-}
-
-.navbar .nav-container a:hover {
-  font-weight: bolder;
-}
-
-.nav-container {
-  display: block;
-  position: relative;
-  height: 60px;
-}
-
-.nav-container .checkbox {
-  position: absolute;
-  display: block;
-  height: 32px;
-  width: 32px;
-  top: 20px;
-  left: 20px;
-  z-index: 5;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.nav-container .hamburger-lines {
-  display: block;
-  height: 26px;
-  width: 32px;
-  position: absolute;
-  top: 17px;
-  left: 20px;
-  z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.nav-container .hamburger-lines .line {
-  display: block;
-  height: 4px;
-  width: 100%;
-  border-radius: 10px;
-  background: #0e2431;
-}
-
-.nav-container .hamburger-lines .line1 {
-  -webkit-transform-origin: 0% 0%;
-          transform-origin: 0% 0%;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-}
-
-.nav-container .hamburger-lines .line2 {
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  transition: -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-}
-
-.nav-container .hamburger-lines .line3 {
-  -webkit-transform-origin: 0% 100%;
-          transform-origin: 0% 100%;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
-}
-
-.navbar .menu-items {
-  padding-top: 120px;
-  background-color: #133853;
-  -webkit-box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-          box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-  height: 100vh;
-  width: 90%;
-  -webkit-transform: translate(-150%);
-          transform: translate(-150%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-left: -40px;
-  padding-left: 50px;
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-  text-align: center;
-}
-
-.navbar .menu-items li {
-  margin-bottom: 1.2rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.logo {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  font-size: 1.2rem;
-  color: #f4815a;
-}
-
-.nav-container input[type="checkbox"]:checked ~ .menu-items {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .logo {
-  display: none;
-}
-
 section {
   background-color: #21325e;
   padding: 1rem;
@@ -205,6 +24,26 @@ section .genreWrap, section .highestRatedWrap, section .popularwrap {
   display: block;
   margin: auto;
   max-width: 1400px;
+}
+
+section .genreWrap h2, section .highestRatedWrap h2, section .popularwrap h2 {
+  color: #f4815a;
+}
+
+section .tippyButton {
+  display: inline-block;
+  padding: 10px;
+  color: aliceblue;
+  text-decoration: none;
+  background: -webkit-gradient(linear, left bottom, left top, from(#1294df), to(#0cbaff));
+  background: linear-gradient(to top, #1294df, #0cbaff);
+  border: 1px solid #334675;
+  border-radius: 5px;
+}
+
+section .tippyButton:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#1294df), to(#2cabdd));
+  background: linear-gradient(to bottom, #1294df, #2cabdd);
 }
 
 section .wrap {
@@ -285,17 +124,5 @@ section .wrap .box h1 {
   background: rgba(0, 0, 0, 0.521);
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-}
-
-footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #21325e;
-  color: #f4815a;
-  -webkit-box-shadow: 0 1px 4px rgba(99, 109, 119, 0.65);
-          box-shadow: 0 1px 4px rgba(99, 109, 119, 0.65);
-  text-align: center;
-  padding: 10px;
 }
 /*# sourceMappingURL=anime.css.map */
