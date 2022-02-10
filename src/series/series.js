@@ -1,5 +1,34 @@
 import data from "./config.js";
 
+const search = () => {
+    const searchBar = document.getElementById("searchBar");
+    let searchQuery = searchBar.value.toLowerCase();
+
+    //API for the search engine
+    fetch("https://api.themoviedb.org/3/search/tv?api_key=" + data.key + "&query=" + searchQuery +"&language=en-US&page=1&include_adult=false")
+        .then(response => response.json())
+        .then(search => {
+            console.log(search);
+        })
+}
+
+//API for general information
+fetch("https://api.themoviedb.org/3/tv/popular?api_key=" + data.key + "&language=en-US")
+    .then(response => response.json())
+    .then(info => {
+        console.log(info);
+
+        fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=" + data.key + "&language=en-US&page=1")
+            .then(response => response.json())
+            .then(result => {
+                console.log(result);
+
+                creatingCards(info, result);
+            })
+    })
+
+
+//Cards for popular and top rated series
 const creatingCards = (info, result) => {
     const cardSection = document.getElementById("cardSection");
 
@@ -37,8 +66,11 @@ const creatingCards = (info, result) => {
         firstSeriesYear.innerHTML = "Release Year: " + info.results[i].first_air_date;
         firstSeriesDetail.appendChild(firstSeriesYear);
 
-        // const moreInfo = document.createElement("a");
-        // moreInfo.src
+        const moreInfoOne = document.createElement("a");
+        moreInfoOne.href = "https://www.themoviedb.org/tv/" + info.results[i].id;
+        moreInfoOne.target = "_blank";
+        moreInfoOne.innerHTML = "More info";
+        firstSeriesDetail.appendChild(moreInfoOne);
 
         //Top 5 top rated
         const secondSection = document.getElementById("secondSection");
@@ -70,20 +102,19 @@ const creatingCards = (info, result) => {
         const secondSeriesYear = document.createElement("p");
         secondSeriesYear.innerHTML = "Release Year: " + result.results[i].first_air_date;
         secondSeriesDetail.appendChild(secondSeriesYear);
+
+        const moreInfoTwo = document.createElement("a");
+        moreInfoTwo.href = "https://www.themoviedb.org/tv/" + result.results[i].id;
+        moreInfoTwo.target = "_blank";
+        moreInfoTwo.innerHTML = "More info";
+        secondSeriesDetail.appendChild(moreInfoTwo);
     }
 }
 
-
-fetch("https://api.themoviedb.org/3/tv/popular?api_key=" + data.key + "&language=en-US")
-    .then(response => response.json())
-    .then(info => {
-        console.log(info);
-
-        fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=" + data.key + "&language=en-US&page=1")
-        .then(response => response.json())
-        .then(result => {
-            console.log(result);
-
-        creatingCards(info, result);
-    })
-})
+const searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click', search);
+window.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+        search();
+    }
+});
