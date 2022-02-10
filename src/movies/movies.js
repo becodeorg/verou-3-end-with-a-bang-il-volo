@@ -1,12 +1,15 @@
 import data from "../../config/config.js";
 
-const apiPop = "https://api.themoviedb.org/3/movie/popular?api_key=";
-const apiTop = "https://api.themoviedb.org/3/movie/top_rated?api_key=";
+const apiPop = "https://api.themoviedb.org/3/movie/popular";
+const apiTop = "https://api.themoviedb.org/3/movie/top_rated";
+const apiGenre = "https://api.themoviedb.org/3/discover/movie";
+const withGenre = "&with_genres="
 
-const getFromApi = (apiUrl, sectionKey) => {
+const getFromApi = (apiUrl, sectionKey,queryParameter="") => {
     const section = document.getElementById(sectionKey);
-    
-    fetch(apiUrl + data.key)
+    const getWrapper = getMovieContainer(section);
+    getWrapper.innerHTML="";
+    fetch(apiUrl+ "?api_key=" + data.key + queryParameter)
         .then(response => response.json())
         .then(data => {
             for (let i = 0; i < 10; i++) {
@@ -28,16 +31,27 @@ const getMovie = (section, groupData, i) => {
             //console.log(movieDuration);
             //console.log(information);
             cardCreater(section, groupData, information, movieDuration, i);
-            timeConvert(movieDuration);
-            return [information, movieDuration];
-
         })
 
 };
 
-const cardCreater = (section, groupData, genreList, duration, ) => {
+const dropDown = document.getElementById("genres");
 
-    const getWrapper = section.getElementsByClassName("container-movies")[0];
+
+const getValue = () =>{
+    const result = dropDown.value;
+    console.log(result);
+    getFromApi(apiGenre, "genre", withGenre + result);
+}
+const getMovieContainer =(section) =>{
+    return section.getElementsByClassName("container-movies")[0];
+
+}
+dropDown.addEventListener("change", getValue);
+
+const cardCreater = (section, groupData, genreList) => {
+
+    const getWrapper = getMovieContainer(section);
     const makeCard = document.createElement("div");
     makeCard.classList.add("box");
     getWrapper.appendChild(makeCard);
@@ -53,9 +67,6 @@ const cardCreater = (section, groupData, genreList, duration, ) => {
     const makeMovieTitle = document.createElement("h1");
     makeMovieTitle.innerText = groupData.title;
     makeDescription.appendChild(makeMovieTitle);
-
-    const runTime = duration;
-    console.log(runTime);
 
     const makeReleaseDate = document.createElement("h4");
     makeReleaseDate.innerText = "Release date:" + " " + groupData.release_date;
@@ -88,6 +99,5 @@ const cardCreater = (section, groupData, genreList, duration, ) => {
         content: makeDescription,
     })
 };
-getFromApi(apiPop,"popular");
-getFromApi(apiTop,"top_rated");
-
+getFromApi(apiPop, "popular");
+getFromApi(apiTop, "top_rated");
