@@ -48,12 +48,14 @@ const generateCards = (popularArray, parent) => {
         console.log(newTitle, parent);
         parent.append(newCard);
         let description = popularArray[i].attributes.description;
+        let anchorTag = '<br> <a href="'+ "https://kitsu.io/anime/"+ popularArray[i].id +'" class="tippyButton">Visit Website</a>'
         tippy(newCard, {
             placement: "right",
             interactive: true,
+            allowHTML: true,
             arrow: true,
             theme: "light-border",
-            content: description,
+            content: description + anchorTag,
         })
     }
 }
@@ -65,9 +67,6 @@ const CheckforDemonSlayer = (popularArray, i) => {
     }
 }
 //event listeners
-
-
-
 window.onload = () => {
     loadAnime()
 }
