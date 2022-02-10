@@ -28,7 +28,7 @@ section{
     }
 }
 .card {
-    max-width: 35%;
+    max-width: 20vw;
     height: auto;
     background: $accent-color;
     border: 2px solid $accent-color;
@@ -38,6 +38,7 @@ section{
     overflow: hidden;
     position: relative;
     display: inline-block;
+    
 }
 
 .card img {
@@ -61,7 +62,6 @@ section{
     box-sizing: border-box;
     -webkit-clip-path: circle(0% at 100% 100%);
     clip-path: circle(0% at 100% 100%);
-  
 }
 
 .card:hover .descriptions {
@@ -97,10 +97,11 @@ section{
 }
 
 .card p {
-    line-height: 24px;
-    height: 70%;
+    //line-height: 24px;
+    height: auto;
     color: $font-color;
     word-wrap: break-word;
+    overflow:auto;
 }
 
 .card button {

@@ -23,17 +23,28 @@ const getMovie = (groupData) =>{
     .then(response => response.json())
     .then(info =>{
         const information = info.genres;
+        const movieDuration = info.runtime;
+        //console.log(movieDuration);
         //console.log(information);
-        cardCreater(groupData,information);
-        return information;
+        cardCreater(groupData,information,movieDuration);
+        timeConvert(movieDuration);
+        return [information, movieDuration];
         
     })
 
 };
 
-const cardCreater = (groupData,genreList) =>{
-    console.log(genreList)
+const timeConvert = (duration) => {
+    var num = duration;
+    var hours = (num / 60);
+    var rhours = Math.floor(hours);
+    var minutes = (hours - rhours) * 60;
+    var rminutes = Math.round(minutes);
+    return num + " minutes = " + rhours + " hour(s) and " + rminutes + " minute(s).";
+    }
 
+const cardCreater = (groupData,genreList,duration) =>{
+    
     const getWrapper = document.querySelector(".wrapper");
     const makeCard = document.createElement("div");
     makeCard.classList.add("card");
@@ -50,6 +61,9 @@ const cardCreater = (groupData,genreList) =>{
     const makeMovieTitle = document.createElement("h1");
     makeMovieTitle.innerText = groupData.title;
     makeDescription.appendChild(makeMovieTitle);
+
+    const runTime = duration;
+    console.log(runTime);
 
     const makeReleaseDate = document.createElement("h4");
     makeReleaseDate.innerText = "Release date:" + " " + groupData.release_date;

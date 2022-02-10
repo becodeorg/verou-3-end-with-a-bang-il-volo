@@ -32,7 +32,7 @@ section .wrapper {
 }
 
 .card {
-  max-width: 35%;
+  max-width: 20vw;
   height: auto;
   background: #21325e;
   border: 2px solid #21325e;
@@ -102,10 +102,10 @@ section .wrapper {
 }
 
 .card p {
-  line-height: 24px;
-  height: 70%;
+  height: auto;
   color: #f0f0f0;
   word-wrap: break-word;
+  overflow: auto;
 }
 
 .card button {
