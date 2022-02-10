@@ -9,6 +9,8 @@ const search = () => {
         .then(response => response.json())
         .then(search => {
             console.log(search);
+
+            searchResult(search)
         })
 }
 
@@ -27,6 +29,22 @@ fetch("https://api.themoviedb.org/3/tv/popular?api_key=" + data.key + "&language
             })
     })
 
+// Search results 
+const searchResult = (search) => {
+    const scrollResult = document.getElementById("scrollResult");
+    for (let x = 0; x < 20; x++) {
+        const resultSearched = search.results[x];
+        
+        const seriesSearched = document.createElement("div");
+        seriesSearched.classList.add("seriesSearched");
+        scrollResult.appendChild(seriesSearched);
+
+        const searchImg = document.createElement("img");
+        searchImg.classList.add("searchImg");
+        searchImg.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + search.results[x].poster_path;
+        seriesSearched.appendChild(searchImg);
+    }
+}
 
 //Cards for popular and top rated series
 const creatingCards = (info, result) => {

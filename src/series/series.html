@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="../../header-footer.css">
     <link rel="stylesheet" href="series.css">
 </head>
+
 <body>
     <nav>
         <div class="navbar">
@@ -33,21 +35,26 @@
         </div>
     </nav>
 
-    <section id="searching">
-        <input type="text" placeholder="Search me..." id="searchBar">
-        <button name="submit" id="searchButton">Good luck</button>
-    </section>
-    <section id="cardSection">
-        <div id="firstSection">
-            <!-- <h2>Most popular of the week</h2> -->
-        </div>
-        <!-- <h2>Top rated</h2> -->
-        <div id="secondSection"></div>
-    </section>
+    <div class="container">
+        <section id="searching">
+            <input type="text" placeholder="Search me..." id="searchBar">
+            <button name="submit" id="searchButton">Good luck</button>
+            <div id="scrollResult"></div>
+        </section>
+
+        <section id="cardSection">
+            <div id="firstSection">
+                <!-- <h2>Most popular of the week</h2> -->
+            </div>
+            <!-- <h2>Top rated</h2> -->
+            <div id="secondSection"></div>
+        </section>
+    </div>
 
     <footer>
         <p>Copyright (c) All Rights Reserved</p>
     </footer>
     <script type="module" src="series.js"></script>
 </body>
+
 </html>
