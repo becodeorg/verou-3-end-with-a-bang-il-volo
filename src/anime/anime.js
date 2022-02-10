@@ -27,7 +27,7 @@ const fetchList = (whattofetch) => {
 const generateCards = (popularArray, parent) => {
     let x = 5;
     if (parent === document.querySelectorAll(".wrap")[2]) {
-        x = 20;
+        x = 15;
     }
     for (let i = 0; parent.children.length != x ; i++) {
         if ( CheckforDemonSlayer(popularArray, i) === 1 ) {
@@ -65,7 +65,21 @@ const CheckforDemonSlayer = (popularArray, i) => {
     }
 }
 //event listeners
+
+
+
 window.onload = () => {
     loadAnime()
 }
+
+const dropdown = document.getElementById("genres");
+dropdown.addEventListener("change", () => {
+    console.log(dropdown.value)
+    const parent = document.querySelectorAll(".wrap")[2]
+    parent.innerHTML = ""
+    const sortByGenre = "filter[categories]=" + dropdown.value + "&page[limit]=20&page[offset]=2&sort=popularityRank";
+    fetchList(sortByGenre)
+})
+
+
 

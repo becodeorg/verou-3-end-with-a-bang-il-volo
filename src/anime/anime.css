@@ -199,7 +199,7 @@ section {
   padding: 1rem;
 }
 
-section h2 {
+section .genreWrap, section .highestRatedWrap, section .popularwrap {
   padding-left: 40px;
   width: 90%;
   display: block;
