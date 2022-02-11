@@ -52,7 +52,6 @@ button {
 }
 
 input[type="search"] {
-  outline: 0;
   width: 100%;
   background: var(--color-light);
   padding: 0 1.6rem;
@@ -111,15 +110,6 @@ label {
   margin: 10px 20px;
 }
 
-#scrollResult::-webkit-scrollbar-track {
-  background: #133853;
-}
-
-#scrollResult::-webkit-scrollbar-thumb {
-  background-color: #f4815a;
-  border-radius: 20px;
-}
-
 #cardSection {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -163,7 +153,36 @@ label {
 
 img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 50%;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: -ms-grid;
+    display: grid;
+  }
+  #scrollResult {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (260px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 260px);
+  }
+  #cardSection {
+    display: -ms-grid;
+    display: grid;
+  }
+  #cardSection #firstSection {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (260px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 260px);
+  }
+  #cardSection #secondSection {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (260px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 260px);
+  }
 }
 /*# sourceMappingURL=series.css.map */
