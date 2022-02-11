@@ -25,11 +25,17 @@ ul {
 
 a {
   text-decoration: none;
+  color: #f4815a;
+  border: 1px solid #f4815a;
+  font-size: large;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
 }
 
 section {
   width: 100vw;
-  height: auto;
+  height: 100vh;
   background-color: #21325e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,7 +61,6 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  overflow: hidden;
   overflow-x: scroll;
 }
 
