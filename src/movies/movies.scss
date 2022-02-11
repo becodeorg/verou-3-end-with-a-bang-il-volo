@@ -8,66 +8,52 @@
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
-
-
+@media only screen and (max-width: 600px){
     body {
         background-color: $base-color;
         color: $head-color;
+        width: 100%;
+        height: 100%;
+        margin-left: 10vw;
+        align-content: center;
+        align-items: center;
+    }
+    section{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .carrouselTitle {
         display: flex;
         flex-direction: column;
-        ul {
-            list-style: none;
-        }
-
-        section {
-            width: 100vw;
-            background-color: $accent-color;
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            .container-movies {
-                width: 200%;
-                display: flex;
-                flex-direction: row;
-                overflow: auto;
-                overflow-x: scroll;
-                white-space: nowrap;
-
-                a {
-                    text-decoration: none;
-                    color: $head-color;
-                    border: 1px solid $head-color;
-                    font-size: large;
-                    align-items: right;
-
-                }
-
-                .box {
-                    border-radius: 30px;
-                    min-height: 40%;
-                    max-height: 60%;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-
-
-            }
-        }
-
-
-
-
-        h1 {
-            color: $head-color;
-        }
-
-        .container-movies::-webkit-scrollbar {
-            overflow: hidden;
-        }
+        flex-wrap: wrap;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .box img{
+        max-width: 60%;
+        margin:1rem;
 
     }
+    h1{
+        color: $head-color;
+    }
+    p{
+        color: $font-color;
+    }
+    a{
+        text-decoration: none;
+        border: 1px solid $head-color;
+        color: $head-color;
+        padding: 1rem;
+    }
+}
+@media only screen and (min-width: 600px){
+    
+}

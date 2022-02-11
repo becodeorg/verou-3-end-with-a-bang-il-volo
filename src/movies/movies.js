@@ -91,13 +91,13 @@ const cardCreater = (section, groupData, genreList) => {
     makeATag.innerText = "Read More...";
     makeDescription.appendChild(makeATag);
 
-    tippy(makeCard, {
+    /*tippy(makeCard, {
         placement: "bottom",
         interactive: true,
         arrow: true,
         theme: "light-border",
         content: makeDescription,
-    })
+    })*/
 };
 getFromApi(apiPop, "popular");
 getFromApi(apiTop, "top_rated");
