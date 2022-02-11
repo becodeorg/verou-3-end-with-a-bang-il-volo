@@ -92,7 +92,7 @@ const cardCreater = (section, groupData, genreList) => {
     makeDescription.appendChild(makeATag);
 
     tippy(makeCard, {
-        placement: "right",
+        placement: "bottom",
         interactive: true,
         arrow: true,
         theme: "light-border",
