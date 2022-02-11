@@ -32,7 +32,7 @@
 }
 
 form {
-    position: relative;
+    // position: relative;
     width: 30rem;
     background: var(--color-brand);
     border-radius: var(--rad);
@@ -56,12 +56,12 @@ input[type="search"] {
     transition: all var(--dur) var(--bez);
     transition-property: width, border-radius;
     z-index: 1;
-    position: relative;
+    // position: relative;
 }
 
 button {
     display: none;
-    position: absolute;
+    // position: absolute;
     top: 0;
     right: 0;
     width: var(--btn-width);
@@ -80,7 +80,7 @@ input:not(:placeholder-shown) {
 }
 
 label {
-    position: absolute;
+    // position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
     padding: 0;
     border: 0;
@@ -143,15 +143,15 @@ img {
 }
 
 //Responsive
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
     .container {
         display: grid;
     }
 
-    #scrollResult {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 260px);
-    }
+    // #scrollResult {
+    //     display: grid;
+    //     grid-template-columns: repeat(auto-fill, 260px);
+    // }
 
     #cardSection {
         display: grid;

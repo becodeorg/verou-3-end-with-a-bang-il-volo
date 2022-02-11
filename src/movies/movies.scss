@@ -21,13 +21,11 @@ ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-}
+
 
 section {
     width: 100vw;
-    height: auto;
+    height: 100vh;
     background-color: $accent-color;
     display: flex;
     flex-direction: column;
@@ -38,13 +36,22 @@ section {
     width: 100%;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
+    //overflow: hidden;
     overflow-x: scroll;
+    a {
+        text-decoration: none;
+        color: $head-color;
+        border: 1px solid $head-color;
+        font-size: large;
+        align-items: right;
+        
+    }
 }
 
 .box {
     padding: 20px;
     border-radius: 30px;
+    
 }
 
 h1 {
