@@ -25,5 +25,21 @@ For the font we used[Montserrat](https://fonts.google.com/specimen/Montserrat). 
 
 <br>
 
-## 🌠 Pages
+## 🔗 Pages
+
+<br>
+
+
+- [Homepage](https://videoteca-best-movielib.netlify.app/index.html)
+- [Movies](https://videoteca-best-movielib.netlify.app/src/movies/movies.html)
+- [Series](https://videoteca-best-movielib.netlify.app/src/series/series.html)
+- [Anime](https://videoteca-best-movielib.netlify.app/src/anime/anime.html)
+
+<br>
+
+
+### 🧑‍🤝‍🧑 Made by [Jian](https://www.example.com) ,[Dery](https://www.example.com) & [Jordy](https://www.example.com) with ❤️.
+Movies -> [Jordy](https://www.example.com)<br>
+Series -> [Dery](https://www.example.com)<br>
+Anime -> [Jian](https://www.example.com)
 
