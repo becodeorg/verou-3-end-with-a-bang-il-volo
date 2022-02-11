@@ -10,7 +10,7 @@ body {
     background-color: #133853;
     width: 100%;
     height: auto;
-    
+
 }
 
 .container {
@@ -109,11 +109,11 @@ body {
     background-color: #133853;
     box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
     height: 100vh;
-    width: 100vw;
+    max-width: 100%;
     transform: translate(-150%);
     display: flex;
     flex-direction: column;
-    margin-left: -230px;
+    /* margin-left: -100px; */
     /* padding-left: 50px; */
     transition: transform 0.5s ease-in-out;
     text-align: center;
@@ -168,11 +168,11 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
-footer img{
-    margin-top: 3rem;
+
+footer img {
     height: 100px;
     width: auto;
-    
+
 }
 
 @media only screen and (max-width: 1200px) {

@@ -16,6 +16,7 @@ section {
 
 section img {
   width: 700px;
+  z-index: -1;
 }
 
 section .text-block {
@@ -78,6 +79,7 @@ section .text-block p {
 
 .img-gradient {
   position: relative;
+  z-index: -1;
 }
 
 .img-gradient::after {
@@ -124,6 +126,9 @@ section:nth-child(2) .img-gradient::after {
   }
   section img {
     width: 100%;
+  }
+  section .text-block p {
+    width: 300px;
   }
   section .img-gradient {
     position: relative;

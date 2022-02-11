@@ -104,6 +104,9 @@ label {
   max-width: 80%;
   height: 200px;
   margin: 10px 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  white-space: nowrap;
 }
 
 #cardSection {
