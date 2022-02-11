@@ -29,7 +29,7 @@ a {
 
 section {
   width: 100vw;
-  height: 50vh;
+  height: auto;
   background-color: #21325e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,7 +38,12 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  place-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .container-movies {
@@ -68,7 +73,7 @@ h1 {
 }
 
 img {
-  width: 200px;
-  height: 300px;
+  width: 400px;
+  height: 600px;
 }
 /*# sourceMappingURL=movies.css.map */
