@@ -21,14 +21,7 @@ ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: $head-color;
-    border: 1px solid $head-color;
-    font-size: large;
-    align-items: right;
-    
-}
+
 
 section {
     width: 100vw;
@@ -45,11 +38,20 @@ section {
     flex-direction: row;
     //overflow: hidden;
     overflow-x: scroll;
+    a {
+        text-decoration: none;
+        color: $head-color;
+        border: 1px solid $head-color;
+        font-size: large;
+        align-items: right;
+        
+    }
 }
 
 .box {
     padding: 20px;
     border-radius: 30px;
+    
 }
 
 h1 {

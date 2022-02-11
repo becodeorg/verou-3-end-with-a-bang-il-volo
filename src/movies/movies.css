@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #3e497a;
+  background-color: #21325e;
   color: #f4815a;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,20 +23,10 @@ ul {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-  color: #f4815a;
-  border: 1px solid #f4815a;
-  font-size: large;
-  -webkit-box-align: right;
-      -ms-flex-align: right;
-          align-items: right;
-}
-
 section {
   width: 100vw;
   height: 100vh;
-  background-color: #21325e;
+  background-color: #3e497a;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,6 +52,16 @@ section {
       -ms-flex-direction: row;
           flex-direction: row;
   overflow-x: scroll;
+}
+
+.container-movies a {
+  text-decoration: none;
+  color: #f4815a;
+  border: 1px solid #f4815a;
+  font-size: large;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
 }
 
 .box {
