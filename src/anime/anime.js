@@ -30,7 +30,7 @@ const generateCards = (popularArray, parent) => {
         x = 15;
     }
     for (let i = 0; parent.children.length != x ; i++) {
-        if ( CheckforDemonSlayer(popularArray, i) === 1 ) {
+        if ( checkforDemonSlayer(popularArray, i) === 1 ) {
             continue;
         }
         const newCard = document.createElement("div");
@@ -62,7 +62,7 @@ const generateCards = (popularArray, parent) => {
         })
     }
 }
-const CheckforDemonSlayer = (popularArray, i) => {
+const checkforDemonSlayer = (popularArray, i) => {
     if (popularArray[i].attributes.canonicalTitle.includes("Kimetsu")) {
         return 1;
     } else {
