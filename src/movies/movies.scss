@@ -3,64 +3,71 @@
 
 
 * {
-
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
 
-body {
-    background-color: $base-color;
-    color: $head-color;
-    display: flex;
-    flex-direction: column;
-}
 
-ul {
-    list-style: none;
-}
+    body {
+        background-color: $base-color;
+        color: $head-color;
+        display: flex;
+        flex-direction: column;
+        ul {
+            list-style: none;
+        }
 
-a {
-    text-decoration: none;
-    color: $head-color;
-    border: 1px solid $head-color;
-    font-size: large;
-    align-items: right;
-    
-}
+        section {
+            width: 100vw;
+            background-color: $accent-color;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
-section {
-    width: 100vw;
-    height: 100vh;
-    background-color: $accent-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.container-movies {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    //overflow: hidden;
-    overflow-x: scroll;
-}
+            .container-movies {
+                width: 200%;
+                display: flex;
+                flex-direction: row;
+                overflow: auto;
+                overflow-x: scroll;
+                white-space: nowrap;
 
-.box {
-    padding: 20px;
-    border-radius: 30px;
-}
+                a {
+                    text-decoration: none;
+                    color: $head-color;
+                    border: 1px solid $head-color;
+                    font-size: large;
+                    align-items: right;
 
-h1 {
-    color: $head-color;
-}
+                }
 
-.container-movies::-webkit-scrollbar {
-    overflow: hidden;
-}
+                .box {
+                    border-radius: 30px;
+                    min-height: 40%;
+                    max-height: 60%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
 
-img {
-    width: 400px;
-    height: 600px;
-}
+
+            }
+        }
+
+
+
+
+        h1 {
+            color: $head-color;
+        }
+
+        .container-movies::-webkit-scrollbar {
+            overflow: hidden;
+        }
+
+    }

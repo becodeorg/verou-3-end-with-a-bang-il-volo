@@ -12,15 +12,15 @@ const fetchList = (whattofetch) => {
     fetch(baseUrl + whattofetch)
     .then( response => response.json())
     .then(data => {
-        let popParent = document.querySelector(".wrap");
+        let parent = document.querySelector(".wrap");
         const dataArray = data.data
         console.log(dataArray)
         if ( whattofetch === "sort=-averageRating&page[limit]=20") {
-            popParent = document.querySelectorAll(".wrap")[1]
+            parent = document.querySelectorAll(".wrap")[1]
         } else if (whattofetch.includes("filter[categories]=")) {
-            popParent = document.querySelectorAll(".wrap")[2]
+            parent = document.querySelectorAll(".wrap")[2]
         }
-        generateCards(dataArray, popParent)
+        generateCards(dataArray, parent)
         })
 }
 
