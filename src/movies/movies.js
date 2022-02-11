@@ -1,86 +1,63 @@
 import data from "../../config/config.js";
-const apiUrl = "https://api.themoviedb.org/3/movie/76341?api_key=";
-const apiPop = "https://api.themoviedb.org/3/movie/popular?api_key=";
 
+const apiPop = "https://api.themoviedb.org/3/movie/popular";
+const apiTop = "https://api.themoviedb.org/3/movie/top_rated";
+const apiGenre = "https://api.themoviedb.org/3/discover/movie";
+const withGenre = "&with_genres="
 
-const slider = document.querySelector('.container-movies');
-let isDown = false;
-let startX;
-let scrollLeft;
+const getFromApi = (apiUrl, sectionKey,queryParameter="") => {
+    const section = document.getElementById(sectionKey);
+    const getWrapper = getMovieContainer(section);
+    getWrapper.innerHTML="";
+    fetch(apiUrl+ "?api_key=" + data.key + queryParameter)
+        .then(response => response.json())
+        .then(data => {
+            for (let i = 0; i < 10; i++) {
+                let groupData = data.results[i];
+                //console.log(groupData);
+                getMovie(section, groupData, i);
+            };
 
-slider.addEventListener('mousedown', e => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('mouseleave', _ => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mouseup', _ => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mousemove', e => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const SCROLL_SPEED = 3;
-  const walk = (x - startX) * SCROLL_SPEED;
-  slider.scrollLeft = scrollLeft - walk;
-});
+        })
+};
 
-
-const getPop = () =>{
-    fetch(apiPop + data.key)
-    .then(response => response.json())
-    .then(data => {
-        for(let i = 0; i < 10 ; i++){
-            let groupData = data.results[i];
-            //console.log(groupData);
-            getMovie(groupData);       
-        };
-        
-    }
-    )
-    };
-
-const getMovie = (groupData) =>{
+const getMovie = (section, groupData, i) => {
     const movieId = groupData.id;
-    fetch("https://api.themoviedb.org/3/movie/" + movieId + "?api_key="+ data.key)
-    .then(response => response.json())
-    .then(info =>{
-        const information = info.genres;
-        const movieDuration = info.runtime;
-        //console.log(movieDuration);
-        //console.log(information);
-        cardCreater(groupData,information,movieDuration);
-        timeConvert(movieDuration);
-        return [information, movieDuration];
-        
-    })
+    fetch("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + data.key)
+        .then(response => response.json())
+        .then(info => {
+            const information = info.genres;
+            const movieDuration = info.runtime;
+            //console.log(movieDuration);
+            //console.log(information);
+            cardCreater(section, groupData, information, movieDuration, i);
+        })
 
 };
 
-const timeConvert = (duration) => {
-    var num = duration;
-    var hours = (num / 60);
-    var rhours = Math.floor(hours);
-    var minutes = (hours - rhours) * 60;
-    var rminutes = Math.round(minutes);
-    return num + " minutes = " + rhours + " hour(s) and " + rminutes + " minute(s).";
-    }
+const dropDown = document.getElementById("genres");
 
-const cardCreater = (groupData,genreList,duration) =>{
-    
-    const getWrapper = document.querySelector(".container-movies");
+
+const getValue = () =>{
+    const result = dropDown.value;
+    console.log(result);
+    getFromApi(apiGenre, "genre", withGenre + result);
+}
+const getMovieContainer =(section) =>{
+    return section.getElementsByClassName("container-movies")[0];
+
+}
+dropDown.addEventListener("change", getValue);
+
+const cardCreater = (section, groupData, genreList) => {
+
+    const getWrapper = getMovieContainer(section);
     const makeCard = document.createElement("div");
     makeCard.classList.add("box");
     getWrapper.appendChild(makeCard);
 
     const makeImg = document.createElement("img");
-    makeImg.src="https://image.tmdb.org/t/p/original/" + groupData.poster_path;
+    makeImg.src = "https://image.tmdb.org/t/p/original/" + groupData.poster_path;
     makeCard.appendChild(makeImg);
 
     const makeDescription = document.createElement("div");
@@ -91,9 +68,6 @@ const cardCreater = (groupData,genreList,duration) =>{
     makeMovieTitle.innerText = groupData.title;
     makeDescription.appendChild(makeMovieTitle);
 
-    const runTime = duration;
-    console.log(runTime);
-
     const makeReleaseDate = document.createElement("h4");
     makeReleaseDate.innerText = "Release date:" + " " + groupData.release_date;
     makeDescription.appendChild(makeReleaseDate);
@@ -101,10 +75,10 @@ const cardCreater = (groupData,genreList,duration) =>{
     const makeGenrelist = document.createElement("div");
     makeGenrelist.classList.add("genrelist");
     makeDescription.appendChild(makeGenrelist);
-    for(let i = 0; i < genreList.length ; i++){
-    const makeGenres = document.createElement("h4");
-    makeGenres.innerHTML = genreList[i].name;
-    makeGenrelist.appendChild(makeGenres);
+    for (let i = 0; i < genreList.length; i++) {
+        const makeGenres = document.createElement("h4");
+        makeGenres.innerHTML = genreList[i].name;
+        makeGenrelist.appendChild(makeGenres);
     }
 
     const makeSummary = document.createElement("p");
@@ -112,11 +86,11 @@ const cardCreater = (groupData,genreList,duration) =>{
     makeDescription.appendChild(makeSummary);
 
     const makeATag = document.createElement("a");
-    makeATag.href= "https://www.themoviedb.org/movie/"+ groupData.id;
+    makeATag.href = "https://www.themoviedb.org/movie/" + groupData.id;
     makeATag.target = "_blank"
     makeATag.innerText = "Read More...";
     makeDescription.appendChild(makeATag);
-    
+
     tippy(makeCard, {
         placement: "right",
         interactive: true,
@@ -124,11 +98,6 @@ const cardCreater = (groupData,genreList,duration) =>{
         theme: "light-border",
         content: makeDescription,
     })
-
-
-
-
 };
-
-getPop();
-getMovie();
+getFromApi(apiPop, "popular");
+getFromApi(apiTop, "top_rated");
