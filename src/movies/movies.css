@@ -10,6 +10,13 @@
 body {
   background-color: #3e497a;
   color: #f4815a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 ul {
@@ -21,8 +28,8 @@ a {
 }
 
 section {
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 50vh;
   background-color: #21325e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,25 +46,29 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   overflow: hidden;
   overflow-x: scroll;
 }
 
-.container-movies .box {
+.box {
   padding: 20px;
   border-radius: 30px;
 }
 
-.container-movies .box img {
-  width: 200px;
-  height: 300px;
-}
-
-.container-movies h1 {
+h1 {
   color: #f4815a;
 }
 
 .container-movies::-webkit-scrollbar {
   overflow: hidden;
+}
+
+img {
+  width: 200px;
+  height: 300px;
 }
 /*# sourceMappingURL=movies.css.map */
