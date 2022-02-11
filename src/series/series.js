@@ -46,12 +46,9 @@ const searchResult = (search) => {
         const searchImg = document.createElement("img");
         searchImg.classList.add("searchImg");
         searchImg.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + resultSearched.poster_path;
+        searchImg.setAttribute("alt", search.results[i].name);;
         seriesSearched.appendChild(searchImg);
 
-        if (searchImg === null) {
-            continue;
-        }
-        
         const extraDetail = document.createElement("p");
         extraDetail.innerHTML = search.results[x].name;
         const moreDetail = document.createElement("a");
@@ -83,6 +80,7 @@ const creatingCards = (info, result) => {
 
         const firstImage = document.createElement("img")
         firstImage.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + info.results[i].poster_path;
+        firstImage.setAttribute("alt", info.results[i].name);
         firstSeriesCard.appendChild(firstImage);
 
         const firstSeriesInfo = document.createElement("div");
@@ -120,6 +118,7 @@ const creatingCards = (info, result) => {
 
         const secondImage = document.createElement("img")
         secondImage.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + result.results[i].poster_path;
+        secondImage.setAttribute("alt", result.results[i].name);
         secondSeriesCard.appendChild(secondImage);
 
         const secondSeriesInfo = document.createElement("div");
