@@ -1,6 +1,10 @@
-import data from "./config.js";
+import data from "../../config.js";
 
-const search = () => {
+const scrollResult = document.getElementById("scrollResult");
+
+const search = (e) => {
+    e.preventDefault(); 
+    scrollResult.innerHTML = "";
     const searchBar = document.getElementById("searchBar");
     let searchQuery = searchBar.value.toLowerCase();
 
@@ -31,7 +35,6 @@ fetch("https://api.themoviedb.org/3/tv/popular?api_key=" + data.key + "&language
 
 // Search results 
 const searchResult = (search) => {
-    const scrollResult = document.getElementById("scrollResult");
     for (let x = 0; x < 20; x++) {
         const resultSearched = search.results[x];
         
@@ -41,7 +44,7 @@ const searchResult = (search) => {
 
         const searchImg = document.createElement("img");
         searchImg.classList.add("searchImg");
-        searchImg.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + search.results[x].poster_path;
+        searchImg.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + resultSearched.poster_path;
         seriesSearched.appendChild(searchImg);
     }
 }
