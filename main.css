@@ -125,6 +125,9 @@ section:nth-child(2) .img-gradient::after {
   section img {
     width: 100%;
   }
+  section .text-block p {
+    width: 300px;
+  }
   section .img-gradient {
     position: relative;
   }
