@@ -36,6 +36,7 @@ fetch("https://api.themoviedb.org/3/tv/popular?api_key=" + data.key + "&language
 // Search results 
 const searchResult = (search) => {
     for (let x = 0; x < 20; x++) {
+        
         const resultSearched = search.results[x];
         
         const seriesSearched = document.createElement("div");
@@ -47,6 +48,10 @@ const searchResult = (search) => {
         searchImg.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + resultSearched.poster_path;
         seriesSearched.appendChild(searchImg);
 
+        if (searchImg === null) {
+            continue;
+        }
+        
         const extraDetail = document.createElement("p");
         extraDetail.innerHTML = search.results[x].name;
         const moreDetail = document.createElement("a");
@@ -55,18 +60,22 @@ const searchResult = (search) => {
         moreDetail.innerHTML = "More info"
         seriesSearched.appendChild(extraDetail);
         seriesSearched.appendChild(moreDetail);
+
+
     }
 }
 
 //Cards for popular and top rated series
 const creatingCards = (info, result) => {
-    const cardSection = document.getElementById("cardSection");
+    const firstHeader = document.getElementById("firstHeader");
+    const secondHeader = document.getElementById("secondHeader");
 
     for (let i = 0; i < 5; i++) {
 
+
         //Top 5 most popular
         const firstSection = document.getElementById("firstSection")
-        cardSection.appendChild(firstSection);
+        firstHeader.appendChild(firstSection);
 
         const firstSeriesCard = document.createElement("div");
         firstSeriesCard.classList.add("seriesCard");
@@ -103,7 +112,7 @@ const creatingCards = (info, result) => {
 
         //Top 5 top rated
         const secondSection = document.getElementById("secondSection");
-        cardSection.appendChild(secondSection);
+        secondHeader.appendChild(secondSection);
 
         const secondSeriesCard = document.createElement("div");
         secondSeriesCard.classList.add("seriesCard");

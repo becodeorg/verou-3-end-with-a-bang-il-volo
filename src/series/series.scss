@@ -144,7 +144,7 @@ img {
     border-radius: 10px;
 }
 
-#cardSection a:link,
+.container a:link,
 a:visited {
     background-color: #f4815a;
     color: #133853;
@@ -155,7 +155,7 @@ a:visited {
     border-radius: 10px;
 }
 
-#cardSection a:hover,
+.container a:hover,
 a:active {
     background-color: #133853;
     color: #f4815a;
@@ -169,10 +169,10 @@ a:active {
         display: grid;
     }
 
-    // #scrollResult {
-    //     display: grid;
-    //     grid-template-columns: repeat(auto-fill, 260px);
-    // }
+    #scrollResult {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 260px);
+    }
 
     #cardSection {
         display: grid;
@@ -180,22 +180,23 @@ a:active {
 
         #firstSection {
             display: grid;
-            grid-template-columns: repeat(auto-fill, 260px);
+            // grid-template-columns: repeat(auto-fill, 200px);
             // margin: 10px;
         }
 
         #secondSection {
             display: grid;
-            grid-template-columns: repeat(auto-fill, 260px);
+            // grid-template-columns: repeat(auto-fill, 260px);
             // margin: 10px;
         }
 
-        // .seriesCard {
-        //     width: 400px;
-        //     max-height: 100%;
-        //     margin: 20px;
+        .seriesCard {
+            width: 300px;
+            max-height: 100%;
+            margin: 20px;
+            text-align: center;
 
-        // }
+        }
     }
 
 }
