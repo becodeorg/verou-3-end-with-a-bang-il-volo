@@ -96,9 +96,11 @@ label {
     max-width: 80%;
     height: 200px;
     margin: 10px 20px;
-    // overflow-x: scroll;
-    // scroll-behavior: smooth;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    white-space: nowrap;
 }
+
 
 // #scrollResult::-webkit-scrollbar-track {
 //     background: #133853;
