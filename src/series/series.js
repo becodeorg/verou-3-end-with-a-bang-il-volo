@@ -1,4 +1,4 @@
-import data from "../../config";
+import data from "../../config/config.js";
 
 const scrollResult = document.getElementById("scrollResult");
 
