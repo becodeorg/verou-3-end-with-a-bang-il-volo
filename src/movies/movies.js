@@ -101,3 +101,4 @@ const cardCreater = (section, groupData, genreList) => {
 };
 getFromApi(apiPop, "popular");
 getFromApi(apiTop, "top_rated");
+
