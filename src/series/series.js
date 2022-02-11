@@ -35,7 +35,7 @@ fetch("https://api.themoviedb.org/3/tv/popular?api_key=" + data.key + "&language
 
 // Search results 
 const searchResult = (search) => {
-    for (let x = 0; x < 10; x++) {
+    for (let x = 0; x < 20; x++) {
         const resultSearched = search.results[x];
         
         const seriesSearched = document.createElement("div");

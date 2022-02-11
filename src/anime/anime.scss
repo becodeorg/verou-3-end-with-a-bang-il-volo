@@ -17,16 +17,21 @@ body {
 section {
     background-color: $accent-color;
     padding: 1rem;
-    .genreWrap, .highestRatedWrap, .popularwrap {
+
+    .genreWrap,
+    .highestRatedWrap,
+    .popularwrap {
         padding-left: 40px;
         width: 90%;
         display: block;
         margin: auto;
         max-width: 1400px;
+
         h2 {
             color: $head-color
         }
     }
+
     .tippyButton {
         display: inline-block;
         padding: 10px;
@@ -40,7 +45,7 @@ section {
             background: linear-gradient(to bottom, #1294df, #2cabdd);
         }
     }
-    
+
 
     .wrap {
         max-width: 1400px;
@@ -90,6 +95,7 @@ section {
                 font-weight: 600;
 
             }
+
             .date h4 {
                 color: #fff;
                 font-weight: 500;

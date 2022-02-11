@@ -55,6 +55,7 @@ body {
     display: block;
     position: relative;
     height: 60px;
+    z-index: 6;
 }
 
 .nav-container .checkbox {

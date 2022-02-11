@@ -36,6 +36,7 @@
 }
 
 form {
+  position: relative;
   width: 30rem;
   background: var(--color-brand);
   border-radius: var(--rad);
@@ -63,10 +64,12 @@ input[type="search"] {
   -webkit-transition-property: width, border-radius;
   transition-property: width, border-radius;
   z-index: 1;
+  position: relative;
 }
 
 button {
   display: none;
+  position: absolute;
   top: 0;
   right: 0;
   width: var(--btn-width);
@@ -85,6 +88,7 @@ input:not(:placeholder-shown) + button {
 }
 
 label {
+  position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0;
   border: 0;
@@ -107,6 +111,15 @@ label {
   overflow-x: scroll;
   scroll-behavior: smooth;
   white-space: nowrap;
+}
+
+#scrollResult::-webkit-scrollbar-track {
+  background: #133853;
+}
+
+#scrollResult::-webkit-scrollbar-thumb {
+  background-color: #f4815a;
+  border-radius: 20px;
 }
 
 #cardSection {
@@ -154,6 +167,23 @@ img {
   max-width: 100%;
   max-height: 50%;
   border-radius: 10px;
+}
+
+#cardSection a:link,
+a:visited {
+  background-color: #f4815a;
+  color: #133853;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+#cardSection a:hover,
+a:active {
+  background-color: #133853;
+  color: #f4815a;
 }
 
 @media only screen and (max-width: 900px) {

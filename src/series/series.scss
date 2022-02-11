@@ -32,7 +32,7 @@
 }
 
 form {
-    // position: relative;
+    position: relative;
     width: 30rem;
     background: var(--color-brand);
     border-radius: var(--rad);
@@ -56,12 +56,12 @@ input[type="search"] {
     transition: all var(--dur) var(--bez);
     transition-property: width, border-radius;
     z-index: 1;
-    // position: relative;
+    position: relative;
 }
 
 button {
     display: none;
-    // position: absolute;
+    position: absolute;
     top: 0;
     right: 0;
     width: var(--btn-width);
@@ -80,7 +80,7 @@ input:not(:placeholder-shown) {
 }
 
 label {
-    // position: absolute;
+    position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
     padding: 0;
     border: 0;
@@ -102,14 +102,14 @@ label {
 }
 
 
-// #scrollResult::-webkit-scrollbar-track {
-//     background: #133853;
-// }
+#scrollResult::-webkit-scrollbar-track {
+    background: #133853;
+}
 
-// #scrollResult::-webkit-scrollbar-thumb {
-//     background-color: #f4815a;
-//     border-radius: 20px;
-// }
+#scrollResult::-webkit-scrollbar-thumb {
+    background-color: #f4815a;
+    border-radius: 20px;
+}
 
 #cardSection {
     display: flex;
@@ -143,6 +143,25 @@ img {
     max-height: 50%;
     border-radius: 10px;
 }
+
+#cardSection a:link,
+a:visited {
+    background-color: #f4815a;
+    color: #133853;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+#cardSection a:hover,
+a:active {
+    background-color: #133853;
+    color: #f4815a;
+}
+
+
 
 //Responsive
 @media only screen and (max-width: 900px) {
