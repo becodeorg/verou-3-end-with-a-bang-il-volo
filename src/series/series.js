@@ -1,4 +1,4 @@
-import data from "../../config.js";
+import data from "./config.js";
 
 const scrollResult = document.getElementById("scrollResult");
 
@@ -46,6 +46,15 @@ const searchResult = (search) => {
         searchImg.classList.add("searchImg");
         searchImg.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + resultSearched.poster_path;
         seriesSearched.appendChild(searchImg);
+
+        const extraDetail = document.createElement("p");
+        extraDetail.innerHTML = search.results[x].name;
+        const moreDetail = document.createElement("a");
+        moreDetail.href = "https://www.themoviedb.org/tv/" + search.results[x].id;
+        moreDetail.target = "_blank";
+        moreDetail.innerHTML = "More info"
+        seriesSearched.appendChild(extraDetail);
+        seriesSearched.appendChild(moreDetail);
     }
 }
 
@@ -54,7 +63,6 @@ const creatingCards = (info, result) => {
     const cardSection = document.getElementById("cardSection");
 
     for (let i = 0; i < 5; i++) {
-        let popSeries = info.results[i].name;
 
         //Top 5 most popular
         const firstSection = document.getElementById("firstSection")
@@ -132,6 +140,7 @@ const creatingCards = (info, result) => {
     }
 }
 
+//Event for the search button
 const searchButton = document.getElementById('searchButton');
 searchButton.addEventListener('click', search);
 window.addEventListener('keydown', event => {
