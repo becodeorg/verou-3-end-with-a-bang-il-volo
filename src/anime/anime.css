@@ -8,17 +8,19 @@
 }
 
 body {
-  background-color: #3e497a;
+  background-color: #21325e;
   height: 100vh;
   width: 100%;
 }
 
 section {
-  background-color: #21325e;
+  background-color: #3e497a;
   padding: 1rem;
 }
 
-section .genreWrap, section .highestRatedWrap, section .popularwrap {
+section .genreWrap,
+section .highestRatedWrap,
+section .popularwrap {
   padding-left: 40px;
   width: 90%;
   display: block;
@@ -26,7 +28,9 @@ section .genreWrap, section .highestRatedWrap, section .popularwrap {
   max-width: 1400px;
 }
 
-section .genreWrap h2, section .highestRatedWrap h2, section .popularwrap h2 {
+section .genreWrap h2,
+section .highestRatedWrap h2,
+section .popularwrap h2 {
   color: #f4815a;
 }
 
@@ -50,7 +54,7 @@ section .wrap {
   max-width: 1400px;
   width: 90%;
   margin: auto;
-  background-color: #21325e;
+  background-color: #3e497a;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
