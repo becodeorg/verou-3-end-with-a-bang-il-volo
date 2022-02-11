@@ -58,7 +58,7 @@ const cardCreater = (section, groupData, genreList) => {
 
     const makeImg = document.createElement("img");
     makeImg.src = "https://image.tmdb.org/t/p/original/" + groupData.poster_path;
-    makeImg.setAttribute("alt", "https://image.tmdb.org/t/p/original/" + groupData.poster_path);
+    makeImg.setAttribute("alt",groupData.overview);
     makeCard.appendChild(makeImg);
 
     const makeDescription = document.createElement("div");
