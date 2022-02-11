@@ -46,7 +46,7 @@ const searchResult = (search) => {
         const searchImg = document.createElement("img");
         searchImg.classList.add("searchImg");
         searchImg.src = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" + resultSearched.poster_path;
-        searchImg.setAttribute("alt", search.results[i].name);;
+        searchImg.setAttribute("alt", resultSearched.name);
         seriesSearched.appendChild(searchImg);
 
         const extraDetail = document.createElement("p");
@@ -57,8 +57,6 @@ const searchResult = (search) => {
         moreDetail.innerHTML = "More info"
         seriesSearched.appendChild(extraDetail);
         seriesSearched.appendChild(moreDetail);
-
-
     }
 }
 
