@@ -3,7 +3,7 @@ import data from "../../config/config.js";
 const apiPop = "https://api.themoviedb.org/3/movie/popular";
 const apiTop = "https://api.themoviedb.org/3/movie/top_rated";
 const apiGenre = "https://api.themoviedb.org/3/discover/movie";
-const withGenre = "&with_genres="
+const withGenre = "&with_genres=";
 
 const getFromApi = (apiUrl, sectionKey,queryParameter="") => {
     const section = document.getElementById(sectionKey);

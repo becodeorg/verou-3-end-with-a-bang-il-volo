@@ -27,11 +27,12 @@ a {
 
 section {
     width: 100vw;
-    height: 50vh;
+    height: auto;
     background-color: $accent-color;
     display: flex;
     flex-direction: column;
-    place-items: center;
+    align-items: center;
+    justify-content: center;
 }
 .container-movies {
     width: 100%;
@@ -55,6 +56,6 @@ h1 {
 }
 
 img {
-    width: 200px;
-    height: 300px;
+    width: 400px;
+    height: 600px;
 }
