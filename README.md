@@ -4,7 +4,7 @@ Videoteca is a place for wanderers looking for a new piece of entertainement. We
 
 ## 📝 Exercise Description
 
-*In this exercise we were supposed to create an online platform where people could come and have fun, we decided to make a website where people who don't know what to watch can look for something that will satisfy their entertainment needs*
+*In this exercise we were supposed to create an online platform where people could come and look for some fun, we decided to make a website where people who don't know what to watch can look for something that will satisfy their entertainment needs*
 
 [read more](https://github.com/becodeorg/gnt-verou-3/tree/main/2.The-Hill/05.End-with-a-bang)
 
@@ -21,7 +21,7 @@ We wen't with a style that resembles IKEA but a little more on the dark side:
 
 <br>
 
-For the font we used[Montserrat](https://fonts.google.com/specimen/Montserrat). It's a modern font that looks nice on any browser.
+For the font we used [Montserrat](https://fonts.google.com/specimen/Montserrat). It's a modern font that looks nice on any browser.
 
 <br>
 
