@@ -169,7 +169,7 @@ img {
   border-radius: 10px;
 }
 
-.container a:link,
+.containerAPI a:link,
 a:visited {
   background-color: #f4815a;
   color: #133853;
@@ -180,7 +180,7 @@ a:visited {
   border-radius: 10px;
 }
 
-.container a:hover,
+.containerAPI a:hover,
 a:active {
   background-color: #133853;
   color: #f4815a;
